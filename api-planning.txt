@@ -1,0 +1,89 @@
+Standar API 
+
+{root.api}/{version}/{grouping}/{endpoint}
+
+SAMPEL:
+http://mac-api.pondokProgrammer.com/v1/auth/LogIn
+
+Standar Status Response ERROR
+
+200 - OK                    --> Call API Success.
+201 - CREARED               --> Post Success.
+400 - BAD REQUEST           --> Error on Client Side (Bisa input yang salah).
+401 - UNAUTHORIZED          --> User not aouthorized to the request.
+403 - FORBIDDEN             --> User not allowed to access.
+404 - NOT FOUND             --> Request Endpoint Not Found.
+500 - INTERNAL SERVER ERROR --> Error on Server Side
+502 - BAD GATEWAY           --> Invalid Response From Antoher Request
+
+GROUP: Authentication
+
+[1] - LogIn
+{root.api}/{version}/auth/login
+
+
+
+[2] - Register
+{root.api}/{version}/auth/register
+
+req:
+{
+    "name":"Testing",
+    "email":"testing@gmail.com",
+    '"password":"testing123",
+    "alamat":"jogja",
+    "number":"0987654321",
+}
+
+res:
+{
+    "message":""Register Success",
+    "data":{
+        "id":1,
+        "name":"Testing", 
+        "email":"testing@gmail.com",
+        "password":"testing123",
+        "alamat":"jogja",
+        "number":"0987654321",
+    }
+}
+
+err-Response:
+201 -> Register Success
+400 -> Input yabg anda masukan tidak valid
+
+GROUP: Blog
+
+[1] - Create Blog Post
+[POST] : {root.api}/{version}/blog/post
+
+req:
+{
+    "title": "Title Blog",
+    "image": "imagefile.png",
+    "body":"Lorem Ipsu is simply dummy text of the printing"
+}
+
+res:
+{
+    "message":"Create Blog Post Seccess",
+    "data":{
+        "post_id":1,
+        "title":"Title Blog",
+        "image":"imagefile.png",
+        "body":"lorem Ipsum is simply dummy text of the printing",
+        "created_at":"12/06/2021",
+        "author":{
+              "Uid":1,
+              "nama":"Testing"
+        }
+    }
+}
+err-Response:
+201 -> Blog Post Behasil Dibuat
+400 -> Input yang anda masukan tidak valid 
+
+[2] - Get Blog Post
+[3] - Update Blog Post
+[4] - Delete Blog Post
+

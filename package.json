@@ -1,0 +1,18 @@
+{
+  "name": "nodep",
+  "version": "1.0.0",
+  "description": "belajarNode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saya sendiri",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "mongoose": "^5.12.2",
+    "nodemon": "^2.0.7"
+  }
+}
